@@ -13,11 +13,12 @@
               padding: 5px 20px;">
 
   <div>
+
     <h3> Zach Wang 王 子 豪 [Version 0.1.0] </h3>
     <h3> Copyright (C) Zach's Playground. All rights reserved. </h3>
     <br>
-    <h3> C: \ zack_wang> Welcome To My Page! </h3>
-    <h3> C: \ zack_wang> Please Click 
+    <h3> C: \ zach_wang> Welcome To My Playground !!! </h3>
+    <h3> C: \ zach_wang> Please Click 
       <input id="bioBtn" type="button" value="Biography" 
             style="color: rgb(45, 255, 25); background-color: black; 
                   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; font-weight:bold;
@@ -33,8 +34,22 @@
             onMouseOver="this.style.color='rgb(225, 50, 195)'; this.style.textDecoration='underline'"
             onMouseOut="this.style.color='rgb(255, 80, 225)'; this.style.textDecoration='none'"
             onClick="Port()" />
-      To See Details About Me.</h3>
+      To See Details About Me. Or, You Can Click 
+      <a href="https://zachs-playground.github.io/src/cs_degree.pdf"
+      target="_blank" rel="noopener noreferrer"
+      style="color: rgb(255, 240, 35); background-color: black; 
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; font-weight:bold;
+            border: 0px;"
+      onMouseOver="this.style.color='rgb(200, 190, 20)'; this.style.textDecoration='underline'"
+      onMouseOut="this.style.color='rgb(255, 240, 35)'; this.style.textDecoration='none'">
+      This </a> To See My Resume In PDF.</h3>
+      
+
+
     <div style="padding: 20px 50px;">
+
+
       <div id="bioSection" style="display: none; flex-direction: row;">
         <img src="./imgs/myimage.jpg" alt="Zach's image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 20px;" />
         <div id="bio" style="padding-left: 25px; width: 70%;">
@@ -69,9 +84,12 @@
           </p>
         </div>
       </div>
+
+
       <div id="portSection" style="display: none">
+
         <div id="portfolio1" style="display: flex; flex-direction: row;">
-          <img src="./imgs/vertex2image.gif" alt="Zach's image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 20px;" />
+          <img src="./imgs/vertex2image.gif" alt="Human Figure Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 20px;" />
           <div id="bio" style="padding-left: 25px; width: 70%;">
             <h2 style="margin-bottom: 10px;" 
                 onMouseOver="this.style.textDecoration='underline';"
@@ -82,8 +100,8 @@
               Vertex2Image -- Construct Human Figure Based On A Monocular Video &nbsp; [ Github ]
               </a>
             </h2>
-            <h3><span style="color: rgb(20, 255, 40);">Status:</span> Published on ACM IUI 2023 Conference</h3>
-            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Computer Graphic, Deep Learning Network</h3>
+            <h3><span style="color: rgb(20, 255, 40);">Status:</span> Published At ACM IUI 2023 Conference</h3>
+            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Computer Graphic, Neural Network</h3>
             
             <p style="line-height: 25px; margin-top: 10px;"> 
               This project is based on the SMPL and UNet++ model to construct a targeted human figure. 
@@ -97,29 +115,94 @@
             </p>
           </div>
         </div>
-        <div id="portfolio2" style="display: flex; flex-direction: row;">
-          <img src="myimage.jpg" alt="Zach's image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 20px;" />
-          <div id="bio" style="padding-left: 25px; width: 70%;">
-            <h2 style="text-decoration: underline">Zach's Biography</h2>
-            <p style="line-height: 25px;">
 
+        <div id="portfolio2" style="margin-top: 30px; display: flex; flex-direction: row;">
+          <img src="./imgs/cemetery.png" alt="Annot Tool Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 10px;" />
+          <div id="bio" style="padding-left: 25px; width: 70%;">
+            <h2 style="margin-bottom: 10px; color: rgb(255, 110, 110)" >
+              Online Image Annotation & Data Collection Tool &nbsp; [ Private Repo ]
+              </a>
+            </h2>
+            <h3><span style="color: rgb(20, 255, 40);">Status:</span> Completed </h3>
+            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> React / JS, AWS, Alibaba Cloud, HTML, CSS </h3>
+            
+            <p style="line-height: 25px; margin-top: 10px;"> 
+              This project is an internal tool for a Chinese company, which provides services to Chinese Muslim cemeteries. 
+              One part of their business is to locate where a tomb is based on name search. In China, most Muslim cemeteries 
+              are not well maintained. Therefore, there is no such database they can use directly. The employees take images 
+              for the tombs, then manually input the tomb information into their database. 
+              <br>
+              <br>
+              I built a deep learning model to extract such information from images in order to reduce their 
+              labor cost. However, due to the complexity of mixed text structures and its unique ways of grouping text, 
+              no existing deep learning models could handle this task, and no existing dataset could match what I need to 
+              train a new model. 
+              <br>
+              <br>
+              I could not use existing annotation tools for two reasons. First, there is no good Chinese annotation tool 
+              they can use. Second, I need to capture the pattern of how employees group text in the image. No existing 
+              tool allows to gather such data when employees labeling on the images. Therefore, I had to build from scratch. 
+              It took me two months to achieve the goal. 
             </p>
           </div>
         </div>
-        <div id="portfolio3" style="display: flex; flex-direction: row;">
-          <img src="myimage.jpg" alt="Zach's image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 20px;" />
+
+        <div id="portfolio3" style="margin-top: 30px; display: flex; flex-direction: row;">
+          <img src="./imgs/pose_estimation.jpeg" alt="Pose Estimation Image" style="width: 15%; height: 10%; margin-top: 20px; border-radius: 10px;" />
           <div id="bio" style="padding-left: 25px; width: 70%;">
-            <h2 style="text-decoration: underline">Zach's Biography</h2>
-            <p style="line-height: 25px;"> Hello </p>
+            <h2 style="margin-bottom: 10px;" 
+                onMouseOver="this.style.textDecoration='underline';"
+                onMouseOut="this.style.textDecoration='none';">
+              <a href="https://github.com/Zachs-Playground/3D-Pose-Estimation" 
+                 target="_blank" rel="noopener noreferrer"
+                 style="text-decoration: none; color: rgb(255, 240, 80);">
+              Cluster2Pose -- Estimate 3D Pose From Multiple Images &nbsp; [ Github ]
+              </a>
+            </h2>
+            <h3><span style="color: rgb(20, 255, 40);">Status:</span> Under development. Target ICCV 2023 Conference</h3>
+            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Triangulation, Deep Learning Network</h3>
+            
+            <p style="line-height: 25px; margin-top: 10px;"> 
+              The key idea of this project is to utilize the detected 2D joints' locations from multiple frames to 
+              estimate the joints in the 3D space.
+              With multi-views, I can perform Triangulation on key joints, then sample points at where the lines are 
+              clustered. Send these points through the MLP network to convert low-dimension spatial information into 
+              high-dimension. With these points, I design a network that learn the spatial information in each frame, 
+              then feed into next component to gather temporal information.
+            </p>
           </div>
         </div>
-        <div id="portfolio4" style="display: flex; flex-direction: row;">
-          
+        
+        <div id="portfolio4" style="margin-top: 30px; display: flex; flex-direction: row;">
+          <img src="./imgs/neural_network.webp" alt="Pose Estimation Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 10px;" />
+          <div id="bio" style="padding-left: 25px; width: 70%;">
+            <h2 style="margin-bottom: 10px;" 
+                onMouseOver="this.style.textDecoration='underline';"
+                onMouseOut="this.style.textDecoration='none';">
+              <a href="https://github.com/Zachs-Playground/NNLib" 
+                 target="_blank" rel="noopener noreferrer"
+                 style="text-decoration: none; color: rgb(170, 50, 255);">
+              NNLib -- C++ Neural Network Assembler &nbsp; [ Github ]
+              </a>
+            </h2>
+            <h3><span style="color: rgb(20, 255, 40);">Status:</span> Under development</h3>
+            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> C++, Linear Algebra, Differentiation</h3>
+            
+            <p style="line-height: 25px; margin-top: 10px;"> 
+              This project aims to build a neural network library and interface with C++, CUDA, and ImGUI, no other third-party 
+              dependencies are included. My goal is to build a C++ package like OpenMMLab (which is a Python package). Users can 
+              call pre-defined components and quickly assemble a model for training. Moreover, I plan to build an interface that 
+              users can build a model without writting a single line of code, like the Blueprint in Unreal Engine.
+              <br>
+              <br>
+              I believe that buidling deep learning models will become more and more user friendly, and people with no coding 
+              background should also be able to use it as a common tool, just like Unreal Engine opens a door to many game designers 
+              who do not like coding.
+            </p>
+          </div>
         </div>
-        <div id="portfolio5" style="display: flex; flex-direction: row;">
-          
-        </div>
-        <div id="portfolio6" style="display: flex; flex-direction: row;">
+
+        <div id="portfolio5" style="margin-top: 30px; display: flex; flex-direction: row;">
           
         </div>
       </div>
