@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zach's Playground</title>
+</head>
+<body style="background-color: black; 
+              color: azure; 
+              font-family: Arial, Helvetica, sans-serif; 
+              font-size: 15px;
+              padding: 5px 20px;">
+
+  <div>
+    <h3> Zach Wang 王 子 豪 [Version 0.1.0] </h3>
+    <h3> Copyright (C) Zach's Playground. All rights reserved. </h3>
+    <br>
+    <h3> C: \ zack_wang> Welcome To My Page! </h3>
+    <h3> C: \ zack_wang> Please Click 
+      <input id="bioBtn" type="button" value="Biography" 
+            style="color: rgb(45, 255, 25); background-color: black; 
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; font-weight:bold;
+                  border: 0px;" 
+            onMouseOver="this.style.color='rgb(35, 200, 20)'; this.style.textDecoration='underline'"
+            onMouseOut="this.style.color='rgb(45, 255, 25)'; this.style.textDecoration='none'"
+            onClick="Bio()" /> 
+      Or 
+      <input id="portBtn1" type="button" value="Portfolio" 
+            style="color: rgb(255, 80, 225); background-color: black; 
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; font-weight:bold;
+                  border: 0px;"
+            onMouseOver="this.style.color='rgb(225, 50, 195)'; this.style.textDecoration='underline'"
+            onMouseOut="this.style.color='rgb(255, 80, 225)'; this.style.textDecoration='none'"
+            onClick="Port()" />
+      To See Details About Me.</h3>
+    <div style="padding: 20px 50px;">
+      <div id="bioSection" style="display: none; flex-direction: row;">
+        <img src="./imgs/myimage.jpg" alt="Zach's image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 20px;" />
+        <div id="bio" style="padding-left: 25px; width: 70%;">
+          <h2 style="text-decoration: underline">Zach's Biography</h2>
+          <p style="line-height: 25px;">
+            Welcome! I recently graduated with a 
+            <span style="color: rgb(255, 123, 0); font-weight:bold;">Master degree in Computer Science </span>
+            major from San Francisco State University (SFSU). My focus is in 
+            <span style="color: rgb(20, 210, 255); font-weight:bold;">Deep Leaning</span> related projects, but 
+            I am open to other opportunites too.
+            <br>
+            <br>
+            My primary programming languages are  <span style="color: rgb(0, 68, 255); font-weight:bold;">C++</span>, 
+            <span style="color: rgb(120, 30, 255); font-weight:bold;">C#</span>, 
+            and <span style="color: rgb(255, 200, 0); font-weight:bold;">Python</span>. I use C++ to build 
+            <br>
+            <br>
+            I am also familiar with HTML, CSS, Javascript, and React framework from past project experiences. You can click the 
+            <input id="portBtn2" type="button" value="Portfolio" 
+                  style="color: rgb(255, 80, 225); background-color: black; 
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+                        font-size: 15px; font-weight:bold; border: 0px;"
+                  onMouseOver="this.style.color='rgb(225, 50, 195)'; this.style.textDecoration='underline'"
+                  onMouseOut="this.style.color='rgb(255, 80, 225)'; this.style.textDecoration='none'"
+                  onClick="Port()" /> 
+            button to see what projects I am currently working on.
+            I am 
+            <br>
+            <br>
+            I also have obtained a <span style="color: rgb(255, 123, 0); font-weight:bold;">MBA degree</span> 
+            from SFSU in 2019. During my MBA study, I explored with 
+          </p>
+        </div>
+      </div>
+      <div id="portSection" style="display: none">
+        <div id="portfolio1" style="display: flex; flex-direction: row;">
+          <img src="./imgs/vertex2image.gif" alt="Zach's image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 20px;" />
+          <div id="bio" style="padding-left: 25px; width: 70%;">
+            <h2 style="margin-bottom: 10px;" 
+                onMouseOver="this.style.textDecoration='underline';"
+                onMouseOut="this.style.textDecoration='none';">
+              <a href="https://github.com/Zachs-Playground/Human-Model-Construction" 
+                 target="_blank" rel="noopener noreferrer"
+                 style="text-decoration: none; color: rgb(0, 160, 250);">
+              Vertex2Image -- Construct Human Figure Based On A Monocular Video &nbsp; [ Github ]
+              </a>
+            </h2>
+            <h3><span style="color: rgb(20, 255, 40);">Status:</span> Published on ACM IUI 2023 Conference</h3>
+            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Computer Graphic, Deep Learning Network</h3>
+            
+            <p style="line-height: 25px; margin-top: 10px;"> 
+              This project is based on the SMPL and UNet++ model to construct a targeted human figure. 
+              Vertex2Image uses SMPL vertices to collect color and motion information. 
+              Vertex2Image is presenting a human figure but not constructing an actual human model.
+              With a given camera direction, we can determine which vertices are in the scene, then feeding 
+              the vertices' information into the model to present what the scene should look like. The biggest 
+              advantage we have over other models is the training speed. The model only needs 2 hours of trianing 
+              on a single GPU to construct high fidelity human figures, instead of spending a few hours with 
+              multiple GPUs or spending a few days with a single GPU.
+            </p>
+          </div>
+        </div>
+        <div id="portfolio2" style="display: flex; flex-direction: row;">
+          <img src="myimage.jpg" alt="Zach's image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 20px;" />
+          <div id="bio" style="padding-left: 25px; width: 70%;">
+            <h2 style="text-decoration: underline">Zach's Biography</h2>
+            <p style="line-height: 25px;">
+
+            </p>
+          </div>
+        </div>
+        <div id="portfolio3" style="display: flex; flex-direction: row;">
+          <img src="myimage.jpg" alt="Zach's image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 20px;" />
+          <div id="bio" style="padding-left: 25px; width: 70%;">
+            <h2 style="text-decoration: underline">Zach's Biography</h2>
+            <p style="line-height: 25px;"> Hello </p>
+          </div>
+        </div>
+        <div id="portfolio4" style="display: flex; flex-direction: row;">
+          
+        </div>
+        <div id="portfolio5" style="display: flex; flex-direction: row;">
+          
+        </div>
+        <div id="portfolio6" style="display: flex; flex-direction: row;">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
