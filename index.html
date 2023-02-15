@@ -177,7 +177,7 @@
               </a>
             </h2>
             <h3><span style="color: rgb(20, 255, 40);">Status:</span> Published At ACM IUI 2023 Conference</h3>
-            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Computer Graphic, Neural Network</h3>
+            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Computer Vision, Computer Graphic, Deep Learning Network</h3>
             
             <p style="margin-top: 10px;"> 
               This project is based on the SMPL and UNet++ model to construct a targeted human figure. 
@@ -196,29 +196,34 @@
           <img src="./imgs/cemetery.png" alt="Annot Tool Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 10px;" />
           <div style="padding-left: 25px; width: 70%;">
             <h2 style="margin-bottom: 10px; color: rgb(255, 110, 110)" >
-              Online Image Annotation & Data Collection Tool &nbsp; [ Private Repo ]
+              Online Image Annotation & Text Recognition Tool &nbsp; [ Private Code ]
               </a>
             </h2>
             <h3><span style="color: rgb(20, 255, 40);">Status:</span> Completed </h3>
-            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> React / JS, AWS, Alibaba Cloud, HTML, CSS </h3>
+            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Computer Vision, Deep Learning Model, React / JS, AWS, Alibaba Cloud, HTML, CSS </h3>
             
             <p style="margin-top: 10px;"> 
-              This project is an internal tool for a Chinese company, which provides services to Chinese Muslim cemeteries. 
-              One part of their business is to locate where a tomb is based on name search. In China, most Muslim cemeteries 
-              are not well maintained. Therefore, there is no such database they can use directly. The employees take images 
-              for the tombs, then manually input the tomb information into their database. 
+              This project is an internal tool for a Chinese company, which provides services to Chinese Muslim 
+              cemeteries. One part of their business is to locate where tombs are based on name searches. In China, 
+              most Muslim cemeteries are not well maintained. Therefore, there is no such database they can use 
+              directly. The employees take images of the tombs, then manually input the tomb information into their 
+              database.
               <br>
               <br>
-              I built a deep learning model to extract such information from images in order to reduce their 
-              labor cost. However, due to the complexity of mixed text structures and its unique ways of grouping text, 
-              no existing deep learning models could handle this task, and no existing dataset could match what I need to 
-              train a new model. 
+              Due to the complexity of mixed text structures and their unique ways of grouping text, no existing dataset 
+              that I could use to meet our criteria for training a new model.  Furthermore, no existing deep learning 
+              models could handle this task either. With limited labor availability, I used a self-supervised learning 
+              model to generate pseudo labels for downstream training. After obtaining the labels and performing some 
+              corrections, I could train a deep learning model to recognize text information in images. However, the 
+              work is not done. The model does not have any clue how to group the text due to the unique grouping form 
+              on the tomb.
               <br>
               <br>
-              I could not use existing annotation tools for two reasons. First, there is no good Chinese annotation tool 
-              they can use. Second, I need to capture the pattern of how employees group text in the image. No existing 
-              tool allows to gather such data when employees labeling on the images. Therefore, I had to build from scratch. 
-              It took me two months to achieve the goal. 
+              Therefore, I developed a tool for employees to input the information into database by clicking the 
+              recognized text. This dramatically reduced their input time in comparison to typing the information into 
+              the database. The tool also allows them to perform corrections if the text was not recognized correctly. 
+              In the meanwhile, the tool is collecting data on how the employees group the text. This data would be 
+              used to train a new downstream model to achieve true automation.
             </p>
           </div>
         </div>
@@ -236,15 +241,15 @@
               </a>
             </h2>
             <h3><span style="color: rgb(20, 255, 40);">Status:</span> Under development. Target ICCV 2023 Conference</h3>
-            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Triangulation, Deep Learning Network</h3>
+            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Computer Vision, Triangulation, Deep Learning Network</h3>
             
             <p style="margin-top: 10px;"> 
-              The key idea of this project is to utilize the detected 2D joints' locations from multiple frames to 
-              estimate the joints in the 3D space.
-              With multi-views, I can perform Triangulation on key joints, then sample points at where the lines are 
-              clustered. Send these points through the MLP network to convert low-dimension spatial information into 
-              high-dimension. With these points, I design a network that learn the spatial information in each frame, 
-              then feed into next component to gather temporal information.
+              The key idea of this project is to utilize the detected 2D joints' locations from multiple views to 
+              estimate the joints in the 3D space. With multi-views, I can perform Triangulation on key joints, then 
+              sample points at where the lines are clustered. Send these points through the MLP network to convert 
+              low-dimension spatial information into high-dimension. Then, I design a deep learning network to learn 
+              the spatial information in each frame and gather temporal information (t-2, t-1, t, t+1, t+2) to estimate 
+              the key joints.
             </p>
           </div>
         </div>
@@ -265,20 +270,43 @@
             <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> C++, CUDA, Linear Algebra, Differentiation</h3>
             
             <p style="margin-top: 10px;"> 
-              This project aims to build a neural network library and interface with C++, CUDA, and ImGUI, no other third-party 
-              dependencies are included. My goal is to build a C++ package like OpenMMLab (which is a Python package). Users can 
-              call pre-defined components and quickly assemble a model for training. Moreover, I plan to build an interface that 
-              users can build a model without writting a single line of code, like the Blueprint in Unreal Engine.
+              This project aims to build a neural network library and interface with C++, CUDA, and ImGUI, no other 
+              third-party dependencies are included. My goal is to build a C++ package like OpenMMLab (which is a 
+              Python package). Users can call pre-defined components and quickly assemble a model for training. 
+              Moreover, I plan to build an interface that users can build a model without writing a single line of 
+              code, like the Blueprint in Unreal Engine.
               <br>
               <br>
-              I believe that buidling deep learning models will become more and more user friendly, and people with no coding 
-              background should also be able to use it as a common tool, just like Unreal Engine opens a door to many game designers 
-              who do not like coding.
+              I believe that building deep learning models will become more and more user-friendly, and people with 
+              no coding background should also be able to use AI as a common tool, just like Unreal Engine opens a 
+              door to many game designers who do not program.
+            </p>
+          </div>
+        </div>
+
+        <div id="portfolio5" style="margin-top: 30px; display: flex; flex-direction: row;">
+          <img src="./imgs/" alt="Writing In Air Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 10px;" />
+          <div style="padding-left: 25px; width: 70%;">
+            <h2 style="margin-bottom: 10px;" 
+                onMouseOver="this.style.textDecoration='underline';"
+                onMouseOut="this.style.textDecoration='none';">
+              <a href="https://github.com/jooni41/Detection-and-Classification-of-writing-activity-in-Air/blob/main/README.md" 
+                 target="_blank" rel="noopener noreferrer"
+                 style="text-decoration: none; color: rgb(0, 4, 255);">
+                 Writing In Air (ICDAR 2023 Competition) &nbsp; [ Github ]
+              </a>
+            </h2>
+            <h3><span style="color: rgb(20, 255, 40);">Status:</span> Target At ICDAR 2023 Competition</h3>
+            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Computer Vision, Sansor Fusion, Deep Learning Network </h3>
+            
+            <p style="margin-top: 10px;"> 
+              
+              
             </p>
           </div>
         </div>
         
-        <div id="portfolio5" style="margin-top: 30px; display: flex; flex-direction: row;">
+        <div id="portfolio6" style="margin-top: 30px; display: flex; flex-direction: row;">
           <img src="./imgs/nano.jpg" alt="Arduino Nano Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 10px;" />
           <div style="padding-left: 25px; width: 70%;">
             <h2 style="margin-bottom: 10px; color: rgb(0, 211, 200)">
@@ -289,15 +317,7 @@
             <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> C++, ATmega328</h3>
             
             <p style="margin-top: 10px;"> 
-              This project aims to build a neural network library and interface with C++, CUDA, and ImGUI, no other third-party 
-              dependencies are included. My goal is to build a C++ package like OpenMMLab (which is a Python package). Users can 
-              call pre-defined components and quickly assemble a model for training. Moreover, I plan to build an interface that 
-              users can build a model without writting a single line of code, like the Blueprint in Unreal Engine.
-              <br>
-              <br>
-              I believe that buidling deep learning models will become more and more user friendly, and people with no coding 
-              background should also be able to use it as a common tool, just like Unreal Engine opens a door to many game designers 
-              who do not like coding.
+              
             </p>
           </div>
         </div>
