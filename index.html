@@ -193,7 +193,35 @@
           </div>
         </div>
 
+
         <div id="portfolio2" style="margin-top: 30px; display: flex; flex-direction: row;">
+          <img src="./imgs/pose_estimation.gif" alt="Pose Estimation Image" style="width: 15%; height: 10%; margin-top: 20px; border-radius: 10px;" />
+          <div style="padding-left: 25px; width: 70%;">
+            <h2 style="margin-bottom: 10px;" 
+                onMouseOver="this.style.textDecoration='underline';"
+                onMouseOut="this.style.textDecoration='none';">
+              <a href="https://github.com/Zachs-Playground/3D-Pose-Estimation" 
+                 target="_blank" rel="noopener noreferrer"
+                 style="text-decoration: none; color: rgb(255, 240, 80);">
+                 3D Pose Estimation From Multi-View 2D Joints' Locations &nbsp; [ Github ]
+              </a>
+            </h2>
+            <h3><span style="color: rgb(20, 255, 40);">Status:</span> Completed </h3>
+            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Computer Vision, Triangulation, Deep Learning Network</h3>
+            
+            <p style="margin-top: 10px;"> 
+              The key idea of this project is to utilize the detected 2D joints' locations from multiple views to 
+              estimate the joints in the 3D space. With multi-views, I can perform Triangulation on key joints, then 
+              sample points at where the lines are clustered. Send these points through the MLP network to convert 
+              low-dimension spatial information into high-dimension. Then, I design a deep learning network to learn 
+              the spatial information in each frame and gather temporal information (t-2, t-1, t, t+1, t+2) to estimate 
+              the key joints.
+            </p>
+          </div>
+        </div>
+
+
+        <div id="portfolio3" style="margin-top: 30px; display: flex; flex-direction: row;">
           <img src="./imgs/cemetery.png" alt="Annot Tool Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 10px;" />
           <div style="padding-left: 25px; width: 70%;">
             <h2 style="margin-bottom: 10px; color: rgb(255, 110, 110)" >
@@ -229,31 +257,6 @@
           </div>
         </div>
 
-        <div id="portfolio3" style="margin-top: 30px; display: flex; flex-direction: row;">
-          <img src="./imgs/pose_estimation.jpeg" alt="Pose Estimation Image" style="width: 15%; height: 10%; margin-top: 20px; border-radius: 10px;" />
-          <div style="padding-left: 25px; width: 70%;">
-            <h2 style="margin-bottom: 10px;" 
-                onMouseOver="this.style.textDecoration='underline';"
-                onMouseOut="this.style.textDecoration='none';">
-              <a href="https://github.com/Zachs-Playground/3D-Pose-Estimation" 
-                 target="_blank" rel="noopener noreferrer"
-                 style="text-decoration: none; color: rgb(255, 240, 80);">
-                 3D Pose Estimation From Multi-View 2D Joints' Locations &nbsp; [ Github ]
-              </a>
-            </h2>
-            <h3><span style="color: rgb(20, 255, 40);">Status:</span> Under development. Target ICCV 2023 Conference</h3>
-            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Computer Vision, Triangulation, Deep Learning Network</h3>
-            
-            <p style="margin-top: 10px;"> 
-              The key idea of this project is to utilize the detected 2D joints' locations from multiple views to 
-              estimate the joints in the 3D space. With multi-views, I can perform Triangulation on key joints, then 
-              sample points at where the lines are clustered. Send these points through the MLP network to convert 
-              low-dimension spatial information into high-dimension. Then, I design a deep learning network to learn 
-              the spatial information in each frame and gather temporal information (t-2, t-1, t, t+1, t+2) to estimate 
-              the key joints.
-            </p>
-          </div>
-        </div>
         
         <div id="portfolio4" style="margin-top: 30px; display: flex; flex-direction: row;">
           <img src="./imgs/neural_network.webp" alt="Pose Estimation Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 10px;" />
@@ -285,7 +288,7 @@
           </div>
         </div>
         
-        <div id="portfolio5" style="margin-top: 30px; display: flex; flex-direction: row;">
+        <!-- <div id="portfolio5" style="margin-top: 30px; display: flex; flex-direction: row;">
           <img src="./imgs/rp2040.jpg" alt="Arduino Nano Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 10px;" />
           <div style="padding-left: 25px; width: 70%;">
             <h2 style="margin-bottom: 10px; color: rgb(0, 211, 200)">
@@ -299,7 +302,7 @@
               
             </p>
           </div>
-        </div>
+        </div> -->
         
       </div>
     </div>
