@@ -14,108 +14,389 @@
               padding: 5px 20px 20px 20px;">
 
   <div>
-
-    <h3> Zach Wang 王 子 豪 [Version 0.1.0] </h3>
+    <div style="display: flex; align-content: center; justify-content: space-between;">
+      <h3> Zach Wang 王 子 豪 [Version 0.1.0] </h3>
+      <div style="display: inline-flex;">
+        <button id="toChBtn"
+                style="color: rgb(255, 50, 50); background-color: rgb(0, 0, 0); border: none;"
+                onMouseOver="this.style.textDecoration='underline'"
+                onMouseOut="this.style.textDecoration='none'"
+                onClick="ToChinese()">中</button>
+        <h3> / </h3>
+        <button id="toEnBtn"
+                style="color: rgb(218, 218, 218); background-color: rgb(0, 0, 0); border: none;"
+                onMouseOver="this.style.textDecoration='underline'"
+                onMouseOut="this.style.textDecoration='none'"
+                onClick="ToEnglish()">En</button>
+      </div>
+    </div>
     <h3> Copyright (C) Zach's Playground. All rights reserved. </h3>
     <br>
-    <h3> C: \ zach_wang> <span id="welcome" style="color: rgb(255, 127, 127)">Welcome To My Playground !!!</span> </h3>
-    <h3> C: \ zach_wang> Please Click 
-      <button id="bioBtn" 
-            style="color: rgb(45, 255, 25); background-color: black; 
-                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; font-weight:bold;
-                  border: 0px;" 
-            onMouseOver="this.style.color='rgb(35, 200, 20)'; this.style.textDecoration='underline'"
-            onMouseOut="this.style.color='rgb(45, 255, 25)'; this.style.textDecoration='none'"
-            onClick="Bio()"> Biography </button>
-      Or 
-      <button id="portBtn1"
-            style="color: rgb(255, 80, 225); background-color: black; 
-                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; font-weight:bold;
-                  border: 0px;"
-            onMouseOver="this.style.color='rgb(225, 50, 195)'; this.style.textDecoration='underline'"
-            onMouseOut="this.style.color='rgb(255, 80, 225)'; this.style.textDecoration='none'"
-            onClick="Port()" > Portfolio </button>
-      To See Details About Me. Or, You Can Click 
-      <a href="https://zachs-playground.github.io/src/Resume.pdf"
-      target="_blank" rel="noopener noreferrer"
-      style="color: rgb(255, 240, 35); background-color: black; 
-            text-decoration: none;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; font-weight:bold;
-            border: 0px;"
-      onMouseOver="this.style.color='rgb(200, 190, 20)'; this.style.textDecoration='underline'"
-      onMouseOut="this.style.color='rgb(255, 240, 35)'; this.style.textDecoration='none'">
-      This </a> To See My Resume In PDF.</h3>
 
 
-    <div style="padding: 20px 50px;">
+    <!-- --------------------------------------------------------------- -->
+    <!--                   This is the Chinese section                   -->
+    <!-- --------------------------------------------------------------- -->
+    
+    <div id="chinese" style="display:block">
+      <h3> C: \ zach_wang> <span id="chinese_welcome" style="color: rgb(255, 127, 127)">欢迎来到我的世界 !!!</span> </h3>
+      <h3 id="chinese_warning"> C: \ zach_wang> 我的网页是存储在 Github 上, 从中国访问可能存在部分图片和文件加载缓慢等问题 </h3>
+      <h3> C: \ zach_wang> 请点击 
+        <button id="bioBtn" 
+              style="color: rgb(45, 255, 25); background-color: black; 
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; font-weight:bold;
+                    border: 0px;" 
+              onMouseOver="this.style.color='rgb(35, 200, 20)'; this.style.textDecoration='underline'"
+              onMouseOut="this.style.color='rgb(45, 255, 25)'; this.style.textDecoration='none'"
+              onClick="Bio('chinese')"> 简介 </button>
+        或者 
+        <button id="portBtn1"
+              style="color: rgb(255, 80, 225); background-color: black; 
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; font-weight:bold;
+                    border: 0px;"
+              onMouseOver="this.style.color='rgb(225, 50, 195)'; this.style.textDecoration='underline'"
+              onMouseOut="this.style.color='rgb(255, 80, 225)'; this.style.textDecoration='none'"
+              onClick="Port('chinese')" > 项目 </button>
+        来了解我的能力与经历。 或者, 点击 
+        <a href="https://zachs-playground.github.io/src/Resume_chinese.pdf"
+        target="_blank" rel="noopener noreferrer"
+        style="color: rgb(255, 240, 35); background-color: black; 
+              text-decoration: none;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; font-weight:bold;
+              border: 0px;"
+        onMouseOver="this.style.color='rgb(200, 190, 20)'; this.style.textDecoration='underline'"
+        onMouseOut="this.style.color='rgb(255, 240, 35)'; this.style.textDecoration='none'">
+        这个链接 </a> 查看我PDF版的简历。</h3>
+    
+    
+      <div style="padding: 20px 50px;">
+    
+        <div id="chinese_bioSection" style="display: none; flex-direction: row;">
+          <img src="./imgs/myimage.jpg" alt="Zach's image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 20px;" />
+          <div id="bio" style="padding-left: 25px; width: 70%;">
+            <p>
+              我在2022年12月毕业于旧金山州立大学 (San Francisco State University), 获得 
+              <span style="color: rgb(255, 123, 0); font-weight:bold;">计算机研究生硕士学位 </span>
+              。我主要的研究方向是
+              <span style="color: rgb(20, 210, 255); font-weight:bold;">计算机视觉</span> 
+              和
+              <span style="color: rgb(0, 210, 130); font-weight:bold;">虚拟现实</span> 
+              相关的项目。
+              <br>
+              <br>
+              我主要的编程语言有  <span style="color: rgb(0, 68, 255); font-weight:bold;">C++</span>
+              和 <span style="color: rgb(255, 200, 0); font-weight:bold;">Python</span>。
+              在做课题研究的项目中, 由于 Pytorch 在构建深度学习模型方面的高效性, Python 成为了我在做此类项目的主要使用语言。
+              近期我在用 C++、OpenMP、和 CUDA 来实现类似 Pytorch 的功能, 此项目的亮点在于不依懒于其它任何的库, 从零实现一个高效的深度学习框架。 
+              在过去, 我还通过相对较小的项目使用过 HTML、CSS、Javascript、和 React 框架。
+              你可以点击 
+              <input id="portBtn2" type="button" value="项目" 
+                    style="color: rgb(255, 80, 225); background-color: black; 
+                          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+                          font-size: 15px; font-weight:bold; border: 0px;"
+                    onMouseOver="this.style.color='rgb(225, 50, 195)'; this.style.textDecoration='underline'"
+                    onMouseOut="this.style.color='rgb(255, 80, 225)'; this.style.textDecoration='none'"
+                    onClick="Port('chinese')" /> 
+              链接了解我所做过的主要项目。
+              <br>
+              <br>
+              在2019时我还获得了旧金山州立大学的 <span style="color: rgb(255, 123, 0); font-weight:bold;">MBA 工商管理学硕士研究生学位</span> 
+              。在我攻读 MBA 期间, 我的学院允许学生上两门商科以外的研究生课程, 我选了数据挖掘和大数据分析的研究生课。在从未学过任何编程的情况下, 
+              我用了三个星期自学了 Python 及其相关的库的应用, 便开始了学校的课程。过程很痛苦但却很兴奋, 因为自此我找到了自己真正热爱的事业。
+              由于我已经很接近 MBA 学位的毕业, 所以决定先拿下 MBA 的学位然后再攻读计算机的研究生学位。
+            </p>
+    
+            <h2 style="margin-top: 60px; color:rgb(255, 255, 255); text-decoration: underline">工作经历</h2>
 
-      <div id="bioSection" style="display: none; flex-direction: row;">
-        <img src="./imgs/myimage.jpg" alt="Zach's image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 20px;" />
-        <div id="bio" style="padding-left: 25px; width: 70%;">
-          <p>
-            Welcome! I graduated with a 
-            <span style="color: rgb(255, 123, 0); font-weight:bold;">Master's degree in Computer Science </span>
-            from San Francisco State University (SFSU) in December 2022. My focus is on 
-            <span style="color: rgb(20, 210, 255); font-weight:bold;">Computer Vision</span> 
-            ,
-            <span style="color: rgb(0, 210, 130); font-weight:bold;">Virtual Reality</span> 
-            , and 
-            <span style="color: rgb(20, 255, 184); font-weight:bold;">Simulation</span> related projects, but 
-            I am open to other opportunities too.
-            <br>
-            <br>
-            My primary programming languages are  <span style="color: rgb(0, 68, 255); font-weight:bold;">C++</span>, 
-            <span style="color: rgb(120, 30, 255); font-weight:bold;">C#</span>, 
-            and <span style="color: rgb(255, 200, 0); font-weight:bold;">Python</span>. Currently, I am writting with C++, 
-            OpenMP, and CUDA to imitate Pytorch's implementation to build a scientific computation package without dependencies.
-            Python is my primary language for prototyping research projects since Pytorch is such a convenient 
-            tool to build deep learning models. I am also familiar with HTML, CSS, Javascript, and React framework from past project experiences. You can 
-            click the 
-            <input id="portBtn2" type="button" value="Portfolio" 
-                  style="color: rgb(255, 80, 225); background-color: black; 
-                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
-                        font-size: 15px; font-weight:bold; border: 0px;"
-                  onMouseOver="this.style.color='rgb(225, 50, 195)'; this.style.textDecoration='underline'"
-                  onMouseOut="this.style.color='rgb(255, 80, 225)'; this.style.textDecoration='none'"
-                  onClick="Port()" /> 
-            tab to see what projects I am currently working on.
-            <br>
-            <br>
-            I also obtained an <span style="color: rgb(255, 123, 0); font-weight:bold;">MBA degree</span> 
-            from SFSU in 2019. During my MBA study, I had an opportunity to take a couple of graduate-level CS courses, where 
-            I found a true passion in my life. I did not want to switch to the CS major at that time because I was so 
-            close to finishing the MBA program and have secured a job promotion. However, the joy I had with CS is really 
-            imprinted in my mind, and I kept thinking about it. The change happened when COVID started since all meetings were 
-            moved to online paltforms. Staying with my job and studying at school became a viable option. Therefore, I decided 
-            to make a leap to pursue my dream career. This is how the new chapter of my life begins.
-          </p>
-
-          <h2 style="margin-top: 60px; color:rgb(255, 255, 255); text-decoration: underline">Working Experiences</h2>
-            
             <div>
               <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                <h3><span style="color: rgb(255, 170, 40);">CP Capital Group Inc.,</span> &nbsp; Assistant Manager</h3>
-                <h3>From May 2017 To Present</h3>
+                <h3><span style="color: rgb(255, 170, 40);">哈尔滨回族墓地查询, </span> &nbsp; 创始人之一</h3>
+                <h3>从2019年至今</h3>
+              </div>
+              <p style="margin-top: -10px;">
+                我们的公司为回族墓地提供墓碑位置搜索服务。回族采取的是土葬的形式, 除了北京和上海两地以外, 其它地区的回族墓地没有任何正规的管理系统。
+                通常, 逝者会被葬在规定区域的某一块空地, 但由于没有任何排列规则, 逝者的墓碑位置很难被记住。时间久了, 很多墓碑已经很难被家人找到。 
+                我们使用计算机视觉的技术收集墓碑上的数据, 然后导入数据库。用户通过我们的网页搜寻逝者的名字, 通过字符的比对, 找到最
+                相关的逝者的信息, 同时返回相对应的ArcGIS的地理数据。
+                尽管2019年开始做, 但我本人在美国, 而且由于受到疫情的影响, 现在仅用哈尔滨回族墓地做测试。
+                在没有做 UI/UX 设计, 也没有任何推广，仅仅通过回族圈内的口口相传, 我们每天都有用户访问。
+                在回族的特殊节日, 更是有大量的访客。可以查看我们的测试网页:  
+                <a href="https://www.muditu.com/haerbin/"
+                  target="_blank" rel="noopener noreferrer"
+                  style="color: rgb(0, 160, 250);">https://www.muditu.com/haerbin/ </a>
+                <br>
+                <ul>
+                  <li> 使用自我监督模型给未标记的图片产出伪标签, 以便为下面的模型使用 </li>
+                  <li> 设计深度学习模型对图片中的文字进行识别, 提升了 76% 的工作效率 </li>
+                  <li> 因为数据的特殊性, 搭建了一个高效的图片标记和文字识别的工具, 工作效率从平均90秒减至30秒对每张图片信息输入的时长 </li>
+                </ul>
+              </p>
+            </div>
+  
+            <br>
+
+            <div>
+              <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                <h3><span style="color: rgb(255, 170, 40);">CP Capital Group Inc.,</span> &nbsp; 助理经理</h3>
+                <h3>从2017年5月至今</h3>
               </div>
               <p style="margin-top: -10px;"> 
-                CP Capital Group Inc. was established in 2015. The company involves in two businesses, Real Estate Investment 
-                and Tourism Operation. CP Capital Group Inc. owns several hotel businesses in the Bay Area (Napa, Oakland, 
-                Union City, San Francisco, and Dixon). The company also operates Tourism business for both regular travel 
-                groups and delegation groups.
+                CP Capital Group Inc. 成立于2015年。公司主要从事两方面的商业活动: 房地产投资和旅游服务。
+                CP Capital Group Inc. 在加州多地拥有酒店（旧金山 San Francisco, 奥克兰 Oakland, 联合市 Union City, 
+                戴维斯市 Davis, 等）, 同时在著名葡萄酒产地纳帕峡谷 (Napa) 拥有酒庄。在旅游行业, CP是现在旧金山湾区最大的
+                酒店团体预订平台, 每年大约预定 20000 个房间。主要的客户来自欧洲, 印度, 巴西, 韩国, 和中国。
+                中国的客源组成主要来自携程网的团组和国内的企业。
               </p>
               <ul>
-                <li> develop and maintain company's online group-booking platform for hotel rooms </li>
-                <li> establish and maintain relationships with hotels, vendors, and clients, such as Ctrip and Priceline.com </li>
-                <li> handle about 20000-room bookings annually </li>
+                <li> 维护公司的内部预定系统, 确保与各个酒店和 Priceline.com 的 API 的接口稳定 </li>
+                <li> 发展和维系我负责的20多个客户关系, 确保良好的沟通渠道 </li>
+                <li> 参与公司的重大决策会议, 如年报, 收购或转卖酒店, 和酒店运营评估等 </li>
               </ul>
             </div>
-            
+
             <br>
 
             <div>
               <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                <h3><span style="color: rgb(255, 170, 40);">HanMa Cemetery Service LLC,</span> &nbsp; Remote Contractor</h3>
-                <h3>From Aug 2022 To Nov 2022</h3>
+                <h3><span style="color: rgb(255, 170, 40);">Sci-Bots,</span> &nbsp; 创始人之一</h3>
+                <h3>从2021年1月至2022年6月</h3>
+              </div>
+              <p style="margin-top: -10px;"> 
+                Sci-Bots 是一家非营利组织, 针对6至10岁孩子的机器人和编程的教育机构。我们采用部分大疆和麦高空间的课程, 负责北美
+                地区的推广, 同时我们也研发自己的课程。
+                主校区位于加利福尼亚州弗里蒙特市 (Fremont)。由于当时我有全职的工作, 同时在攻读计算机研究生学位, 没有时间和经历持续
+                开发课程并每周授课, 所以决定不再继续这个项目。这是我们的网站: 
+                <a href="https://www.sci-bots.org/"
+                  target="_blank" rel="noopener noreferrer"
+                  style="color: rgb(0, 160, 250);">www.sci-bots.org </a>
+              </p>
+              <ul>
+                <li> 作为核心课程设计者, 我设计了三门课程 (像素显示器，红外激光对战枪，作战机器人) </li>
+                <li> 监督并指导每周课程的进度 </li>
+                <li> 每周培训授课老师, 关于教学内容和编程 </li>
+                <li> 联络协同大疆和麦高空间关于课程设计 </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+    
+        <div id="chinese_portSection" style="display: none">
+    
+          <div id="portfolio1" style="display: flex; flex-direction: row;">
+            <img src="./imgs/vertex2image.gif" alt="Human Figure Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 20px;" />
+            <div style="padding-left: 25px; width: 70%;">
+              <h2 style="margin-bottom: 10px;" 
+                  onMouseOver="this.style.textDecoration='underline';"
+                  onMouseOut="this.style.textDecoration='none';">
+                <a href="https://github.com/Zachs-Playground/Human-Model-Construction" 
+                  target="_blank" rel="noopener noreferrer"
+                  style="text-decoration: none; color: rgb(0, 160, 250);">
+                Vertex2Image -- Construct Human Figure Based On A Monocular Video &nbsp; [ Github 开源 ]
+                </a>
+              </h2>
+              <h3><span style="color: rgb(20, 255, 40);">状态:</span> 发表在 2023 ACM IUI 峰会上</h3>
+              <h3><span style="color: rgb(250, 142, 0);">相关技术:</span> Python, 计算机视觉, 计算机图像, 卷积神经网络</h3>
+              
+              <p style="margin-top: 10px;">
+                该项目基于 SMPL 和 UNet++ 的部分理念来重塑3D目标人物。Vertex2Image 呈现的是目标人物的图像, 并不是构建一个实际的人体模型。
+                我们的模型使用 SMPL 的顶点来收集颜色和运动信息, 通过给定的摄影机方向, 将可视的顶点的信息输入到模型中, 
+                以呈现目标人物在此角度应该所呈现的姿态。此技术实现了将二维的视频扩展成三维立体的视频。
+                我们模型最大的优势在于训练速度, 只需要一个 GPU 训练2个小时便可产出高精度的成像。
+                对比其它的模型, 它们通常需要花几个小时使用多个 GPU 或花几天时间使用单个 GPU 才能得到类似的结果。
+              </p>
+            </div>
+          </div>
+    
+    
+          <div id="portfolio2" style="margin-top: 30px; display: flex; flex-direction: row;">
+            <img src="./imgs/pose_estimation.gif" alt="Pose Estimation Image" style="width: 15%; height: 10%; margin-top: 20px; border-radius: 10px;" />
+            <div style="padding-left: 25px; width: 70%;">
+              <h2 style="margin-bottom: 10px;" 
+                  onMouseOver="this.style.textDecoration='underline';"
+                  onMouseOut="this.style.textDecoration='none';">
+                <a href="https://github.com/Zachs-Playground/3D-Pose-Estimation" 
+                  target="_blank" rel="noopener noreferrer"
+                  style="text-decoration: none; color: rgb(255, 240, 80);">
+                  PoseAttention -- 3D Pose Estimation with Attention Mechanism &nbsp; [ Github 开源 ]
+                </a>
+              </h2>
+              <h3><span style="color: rgb(20, 255, 40);">状态:</span> 已提交 2023 NeurIPS 峰会 </h3>
+              <h3><span style="color: rgb(250, 142, 0);">相关技术:</span> Python, 计算机视觉, 深度学习网络, 注意力机制</h3>
+              
+              <p style="margin-top: 10px;"> 
+                PoseAttention 是一个深度学习模型框架, 输入目标人物在图片中关节的坐标, 准确估计其关节在三维空间中的位置。
+                我们的模型只需要单一相机角度作为输入, 所以可以对接任何现有二维姿势检测模型的产出。通过采用注意力机制, 
+                PoseAttention 有效地捕捉空间与时间上的特征。
+                在Fit3D数据集上的训练和测试, PoseAttention
+                获得了最优的每关节位置平均误差 (MPJPE) 7.3mm。MPJPE度量是姿态估计领域中的标准基准。为了进一步验证我们
+                模型的有效性, 我们还在CMU Panoptic数据集上进行了测试。根据 MPJPE 指标的衡量, PoseAttention表现出与当前
+                最先进的单视图模型相同的性能, 但我们的模型可以达到每秒700帧数据的运算速度。我们的贡献包括三项重大成就: 
+                1) 对比其它的的模型, 我的模型在两个不同的数据集上都获得最准确的结果, 
+                2) 可以与任何现有的二维姿态检测模型结合, 以及
+                3) 为三维姿态预估任务, 提供独特的注意力模型架构。
+              </p>
+            </div>
+          </div>
+    
+    
+          <div id="portfolio3" style="margin-top: 30px; display: flex; flex-direction: row;">
+            <img src="./imgs/cemetery.png" alt="Annot Tool Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 10px;" />
+            <div style="padding-left: 25px; width: 70%;">
+              <h2 style="margin-bottom: 10px; color: rgb(255, 110, 110)" >
+                图片标记 & 文字识别工具 &nbsp; [ Github 非公开 ]
+                </a>
+              </h2>
+              <h3><span style="color: rgb(20, 255, 40);">状态:</span> 核心组件完成 </h3>
+              <h3><span style="color: rgb(250, 142, 0);">主要技术:</span> Python, 计算机视觉, 深度学习网络, React / JS, HTML, CSS, 亚马逊云 </h3>
+              
+              <p style="margin-top: 10px;"> 
+                该项目是我为我们公司建造的内部工具, 我们的业务之一是根据回族逝者的姓名搜索来定位其墓碑的位置。
+                在中国, 回族采取的是土葬的形式, 但是除了北京和上海两地以外, 大多数穆斯林的墓地没有很好的维护和管理。
+                通常, 逝者会被葬在规定区域的某一块空地, 但由于没有任何排列规则, 埋葬后, 家人很难甚至无法找到逝者的墓碑。
+                我们使用计算机视觉的技术收集墓碑上的数据, 然后导入我们的数据库。用户通过我们的网页搜寻逝者的名字, 通过字符的比对, 找到最
+                相关的逝者的信息, 同时返回相对应的ArcGIS的地理数据。
+                <br>
+                <br>
+                由于文本结构的复杂性 (碑上同时包含简体、繁体、汉子数字大写和小写) 及其独特的文字排序方式, 没有任何的数据集可以满足我们训练模型的需求。
+                此外, 没有任何现存的深度学习模型可以处理这项任务。在人工有限的情况下, 我使用了自我监督学习模型以生成用于下游训练的伪标签。
+                我所建造的这个工具在获得标签后, 还可以认为对错误的标签进行更正。
+                <br>
+                <br>
+                尽管这个工具还没有达到完全自动化, 但已经大大减少了所需人工的输入时间。只有错误标记的地方需要改正, 其它地方只需要点击确认即可。
+                之所以还没有达到全自动化, 是因为独特的文字排序形式, 这个只能通过收集人工点击输入的规律, 再构造另外一个模型来完成全自动化。
+              </p>
+            </div>
+          </div>
+    
+          
+          <div id="portfolio4" style="margin-top: 30px; display: flex; flex-direction: row;">
+            <img src="./imgs/neural_network.webp" alt="Pose Estimation Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 10px;" />
+            <div style="padding-left: 25px; width: 70%;">
+              <h2 style="margin-bottom: 10px;" 
+                  onMouseOver="this.style.textDecoration='underline';"
+                  onMouseOut="this.style.textDecoration='none';">
+                <a href="https://github.com/Zachs-Playground/NNLib" 
+                  target="_blank" rel="noopener noreferrer"
+                  style="text-decoration: none; color: rgb(170, 50, 255);">
+                NNLib -- C++ Neural Network Assembler &nbsp; [ Github 开源 ]
+                </a>
+              </h2>
+              <h3><span style="color: rgb(20, 255, 40);">状态:</span> Under development</h3>
+              <h3><span style="color: rgb(250, 142, 0);">主要技术:</span> C++, OpenMP, CUDA, 线性代数, 微积分, C#, Unity</h3>
+              
+              <p style="margin-top: 10px;"> 
+                该项目旨在建立一个神经网络库, 并与C++、OpenMP、CUDA和Unity接口, 不包括其他第三方依赖项。我的目标是构建一个像 OpenMMLab 
+                这样的 C++ 库 (Python库) 。用户可以调用预定义的组件并快速组装模型进行培训。
+                此外，我计划构建一个界面，用户无需编写一行代码，就像虚幻引擎中的蓝图。
+
+                This project aims to build a neural network library and interface with C++, OpenMP, CUDA, and Unity, 
+                no other third-party dependencies are included. My goal is to build a C++ package like OpenMMLab (which is a 
+                Python package). Users can call pre-defined components and quickly assemble a model for training. 
+                Moreover, I plan to build an interface that users can build a model without writing a single line of 
+                code, like the Blueprint in Unreal Engine.
+                <br>
+                <br>
+                我相信，构建深度学习模型将变得越来越用户友好没有编码背景也应该能够使用人工智能作为通用工具，就像虚幻引擎打开一个许多不编程的游戏设计师的门。
+                
+                I believe that building deep learning models will become more and more user-friendly, and people with 
+                no coding background should also be able to use AI as a common tool, just like Unreal Engine opens a 
+                door to many game designers who do not program.
+              </p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- --------------------------------------------------------------- -->
+    <!--                   This is the English section                   -->
+    <!-- --------------------------------------------------------------- -->
+
+    <div id="english" style="display: none">
+      <h3> C: \ zach_wang> <span id="english_welcome" style="color: rgb(255, 127, 127)">Welcome To My Playground !!!</span> </h3>
+      <h3 id="english_warning"> C: \ zach_wang> My page is hosted on the Github. If you are accessing from China, some images and documents may take longer to load. </h3>
+      <h3> C: \ zach_wang> Please Click 
+        <button id="bioBtn" 
+              style="color: rgb(45, 255, 25); background-color: black; 
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; font-weight:bold;
+                    border: 0px;" 
+              onMouseOver="this.style.color='rgb(35, 200, 20)'; this.style.textDecoration='underline'"
+              onMouseOut="this.style.color='rgb(45, 255, 25)'; this.style.textDecoration='none'"
+              onClick="Bio('english')"> Biography </button>
+        Or 
+        <button id="portBtn1"
+              style="color: rgb(255, 80, 225); background-color: black; 
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; font-weight:bold;
+                    border: 0px;"
+              onMouseOver="this.style.color='rgb(225, 50, 195)'; this.style.textDecoration='underline'"
+              onMouseOut="this.style.color='rgb(255, 80, 225)'; this.style.textDecoration='none'"
+              onClick="Port('english')" > Portfolio </button>
+        To See Details About Me. Or, You Can Click 
+        <a href="https://zachs-playground.github.io/src/Resume.pdf"
+        target="_blank" rel="noopener noreferrer"
+        style="color: rgb(255, 240, 35); background-color: black; 
+              text-decoration: none;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; font-weight:bold;
+              border: 0px;"
+        onMouseOver="this.style.color='rgb(200, 190, 20)'; this.style.textDecoration='underline'"
+        onMouseOut="this.style.color='rgb(255, 240, 35)'; this.style.textDecoration='none'">
+        This </a> To See My Resume In PDF.</h3>
+    
+    
+      <div style="padding: 20px 50px;">
+    
+        <div id="english_bioSection" style="display: none; flex-direction: row;">
+          <img src="./imgs/myimage.jpg" alt="Zach's image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 20px;" />
+          <div id="bio" style="padding-left: 25px; width: 70%;">
+            <p>
+              Welcome! I graduated with a 
+              <span style="color: rgb(255, 123, 0); font-weight:bold;">Master's degree in Computer Science </span>
+              from San Francisco State University (SFSU) in December 2022. My focus is on 
+              <span style="color: rgb(20, 210, 255); font-weight:bold;">Computer Vision</span> 
+              ,
+              <span style="color: rgb(0, 210, 130); font-weight:bold;">Virtual Reality</span> 
+              , and 
+              <span style="color: rgb(20, 255, 184); font-weight:bold;">Simulation</span> related projects, but 
+              I am open to other opportunities too.
+              <br>
+              <br>
+              My primary programming languages are  <span style="color: rgb(0, 68, 255); font-weight:bold;">C++</span>
+              and <span style="color: rgb(255, 200, 0); font-weight:bold;">Python</span>. Currently, I am writting with C++, 
+              OpenMP, and CUDA to imitate Pytorch's implementation to build a scientific computation package without dependencies.
+              Python is my primary language for prototyping research projects since Pytorch is such a convenient 
+              tool to build deep learning models. I am also familiar with HTML, CSS, Javascript, and React framework from past project experiences. You can 
+              click the 
+              <input id="portBtn2" type="button" value="Portfolio" 
+                    style="color: rgb(255, 80, 225); background-color: black; 
+                          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+                          font-size: 15px; font-weight:bold; border: 0px;"
+                    onMouseOver="this.style.color='rgb(225, 50, 195)'; this.style.textDecoration='underline'"
+                    onMouseOut="this.style.color='rgb(255, 80, 225)'; this.style.textDecoration='none'"
+                    onClick="Port('english')" /> 
+              tab to see what projects I am currently working on.
+              <br>
+              <br>
+              I also obtained an <span style="color: rgb(255, 123, 0); font-weight:bold;">MBA degree</span> 
+              from SFSU in 2019. During my MBA study, I had an opportunity to take a couple of graduate-level CS courses, where 
+              I found a true passion in my life. I did not want to switch to the CS major at that time because I was so 
+              close to finishing the MBA program and have secured a job promotion. However, the joy I had with CS is really 
+              imprinted in my mind, and I kept thinking about it. The change happened when COVID started since all meetings were 
+              moved to online paltforms. Staying with my job and studying at school became a viable option. Therefore, I decided 
+              to make a leap to pursue my dream career. This is how the new chapter of my life begins.
+            </p>
+    
+            <h2 style="margin-top: 60px; color:rgb(255, 255, 255); text-decoration: underline">Working Experiences</h2>
+  
+            <div>
+              <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                <h3><span style="color: rgb(255, 170, 40);">Muslim Cemetery Service LLC,</span> &nbsp; Founding Member</h3>
+                <h3>From 2019 To Present</h3>
               </div>
               <p style="margin-top: -10px;">
                 HanMa LLC is a newly established company that provides cemetery services for Muslim communities in China. One of 
@@ -133,12 +414,12 @@
                 </ul>
               </p>
             </div>
-
+  
             <br>
-
+  
             <div>
               <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                <h3><span style="color: rgb(255, 170, 40);">Sci-Bots,</span> &nbsp; Founder</h3>
+                <h3><span style="color: rgb(255, 170, 40);">Sci-Bots,</span> &nbsp; Founding Member</h3>
                 <h3>From Jan 2021 To Jun 2022</h3>
               </div>
               <p style="margin-top: -10px;"> 
@@ -158,155 +439,184 @@
               </ul>
             </div>
 
-        </div>
-      </div>
-
-
-      
-
-      <div id="portSection" style="display: none">
-
-        <div id="portfolio1" style="display: flex; flex-direction: row;">
-          <img src="./imgs/vertex2image.gif" alt="Human Figure Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 20px;" />
-          <div style="padding-left: 25px; width: 70%;">
-            <h2 style="margin-bottom: 10px;" 
-                onMouseOver="this.style.textDecoration='underline';"
-                onMouseOut="this.style.textDecoration='none';">
-              <a href="https://github.com/Zachs-Playground/Human-Model-Construction" 
-                 target="_blank" rel="noopener noreferrer"
-                 style="text-decoration: none; color: rgb(0, 160, 250);">
-              Vertex2Image -- Construct Human Figure Based On A Monocular Video &nbsp; [ Github ]
-              </a>
-            </h2>
-            <h3><span style="color: rgb(20, 255, 40);">Status:</span> Published At ACM IUI 2023 Conference</h3>
-            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Computer Vision, Computer Graphic, Deep Learning Network</h3>
-            
-            <p style="margin-top: 10px;"> 
-              This project is based on the SMPL and UNet++ model to construct a targeted human figure. 
-              Vertex2Image uses SMPL vertices to collect color and motion information. 
-              Vertex2Image is presenting a human figure but not constructing an actual human model.
-              With a given camera direction, we can determine which vertices are in the scene, then feed 
-              the vertices' information into the model to present what the scene should look like. The biggest 
-              advantage we have over other models is the training speed. The model only needs 2 hours of training 
-              on a single GPU to construct high-fidelity human figures, instead of spending a few hours with 
-              multiple GPUs or spending a few days with a single GPU.
-            </p>
-          </div>
-        </div>
-
-
-        <div id="portfolio2" style="margin-top: 30px; display: flex; flex-direction: row;">
-          <img src="./imgs/pose_estimation.gif" alt="Pose Estimation Image" style="width: 15%; height: 10%; margin-top: 20px; border-radius: 10px;" />
-          <div style="padding-left: 25px; width: 70%;">
-            <h2 style="margin-bottom: 10px;" 
-                onMouseOver="this.style.textDecoration='underline';"
-                onMouseOut="this.style.textDecoration='none';">
-              <a href="https://github.com/Zachs-Playground/3D-Pose-Estimation" 
-                 target="_blank" rel="noopener noreferrer"
-                 style="text-decoration: none; color: rgb(255, 240, 80);">
-                 3D Pose Estimation From Multi-View 2D Joints' Locations &nbsp; [ Github ]
-              </a>
-            </h2>
-            <h3><span style="color: rgb(20, 255, 40);">Status:</span> Completed </h3>
-            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Computer Vision, Triangulation, Deep Learning Network</h3>
-            
-            <p style="margin-top: 10px;"> 
-              The key idea of this project is to utilize the detected 2D joints' locations from multiple views to 
-              estimate the joints in the 3D space. With multi-views, I can perform Triangulation on key joints, then 
-              sample points at where the lines are clustered. Send these points through the MLP network to convert 
-              low-dimension spatial information into high-dimension. Then, I design a deep learning network to learn 
-              the spatial information in each frame and gather temporal information (t-2, t-1, t, t+1, t+2) to estimate 
-              the key joints.
-            </p>
-          </div>
-        </div>
-
-
-        <div id="portfolio3" style="margin-top: 30px; display: flex; flex-direction: row;">
-          <img src="./imgs/cemetery.png" alt="Annot Tool Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 10px;" />
-          <div style="padding-left: 25px; width: 70%;">
-            <h2 style="margin-bottom: 10px; color: rgb(255, 110, 110)" >
-              Online Image Annotation & Text Recognition Tool &nbsp; [ Private Code ]
-              </a>
-            </h2>
-            <h3><span style="color: rgb(20, 255, 40);">Status:</span> Completed. Worked as a software contractor </h3>
-            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Computer Vision, Deep Learning Model, React / JS, AWS, Alibaba Cloud, HTML, CSS </h3>
-            
-            <p style="margin-top: 10px;"> 
-              This project is an internal tool for a Chinese company, which provides services to Chinese Muslim 
-              cemeteries. One part of their business is to locate where tombs are based on name searches. In China, 
-              most Muslim cemeteries are not well maintained. Therefore, there is no such database they can use 
-              directly. The employees take images of the tombs, then manually input the tomb information into their 
-              database.
-              <br>
-              <br>
-              Due to the complexity of mixed text structures and their unique ways of grouping text, no existing dataset 
-              that I could use to meet our criteria for training a new model.  Furthermore, no existing deep learning 
-              models could handle this task either. With limited labor availability, I used a self-supervised learning 
-              model to generate pseudo labels for downstream training. After obtaining the labels and performing some 
-              corrections, I could train a deep learning model to recognize text information in images. However, the 
-              work is not done. The model does not have any clue how to group the text due to the unique grouping form 
-              on the tomb.
-              <br>
-              <br>
-              Therefore, I developed a tool for employees to input the information into database by clicking the 
-              recognized text. This dramatically reduced their input time in comparison to typing the information into 
-              the database. The tool also allows them to perform corrections if the text was not recognized correctly. 
-              In the meanwhile, the tool is collecting data on how the employees group the text. This data would be 
-              used to train a new downstream model to achieve true automation.
-            </p>
-          </div>
-        </div>
-
-        
-        <div id="portfolio4" style="margin-top: 30px; display: flex; flex-direction: row;">
-          <img src="./imgs/neural_network.webp" alt="Pose Estimation Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 10px;" />
-          <div style="padding-left: 25px; width: 70%;">
-            <h2 style="margin-bottom: 10px;" 
-                onMouseOver="this.style.textDecoration='underline';"
-                onMouseOut="this.style.textDecoration='none';">
-              <a href="https://github.com/Zachs-Playground/NNLib" 
-                 target="_blank" rel="noopener noreferrer"
-                 style="text-decoration: none; color: rgb(170, 50, 255);">
-              NNLib -- C++ Neural Network Assembler &nbsp; [ Github ]
-              </a>
-            </h2>
-            <h3><span style="color: rgb(20, 255, 40);">Status:</span> Under development</h3>
-            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> C++, OpenMP, CUDA, Linear Algebra, Differentiation, C#, Unity</h3>
-            
-            <p style="margin-top: 10px;"> 
-              This project aims to build a neural network library and interface with C++, OpenMP, CUDA, and Unity, 
-              no other third-party dependencies are included. My goal is to build a C++ package like OpenMMLab (which is a 
-              Python package). Users can call pre-defined components and quickly assemble a model for training. 
-              Moreover, I plan to build an interface that users can build a model without writing a single line of 
-              code, like the Blueprint in Unreal Engine.
-              <br>
-              <br>
-              I believe that building deep learning models will become more and more user-friendly, and people with 
-              no coding background should also be able to use AI as a common tool, just like Unreal Engine opens a 
-              door to many game designers who do not program.
-            </p>
-          </div>
-        </div>
-        
-        <!-- <div id="portfolio5" style="margin-top: 30px; display: flex; flex-direction: row;">
-          <img src="./imgs/rp2040.jpg" alt="Arduino Nano Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 10px;" />
-          <div style="padding-left: 25px; width: 70%;">
-            <h2 style="margin-bottom: 10px; color: rgb(0, 211, 200)">
-              C++ RP2040 Board Emulator
-              </a>
-            </h2>
-            <h3><span style="color: rgb(20, 255, 40);">Status:</span> In Planning</h3>
-            <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> C++, Embedding System, RP2040 </h3>
-            
-            <p style="margin-top: 10px;"> 
+            <br>
               
-            </p>
+            <div>
+              <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                <h3><span style="color: rgb(255, 170, 40);">CP Capital Group Inc.,</span> &nbsp; Assistant Manager</h3>
+                <h3>From May 2017 To May 2023</h3>
+              </div>
+              <p style="margin-top: -10px;"> 
+                CP Capital Group Inc. was established in 2015. The company involves in two businesses, Real Estate Investment 
+                and Tourism Operation. CP Capital Group Inc. owns several hotel businesses in the Bay Area (Napa, Oakland, 
+                Union City, San Francisco, and Dixon). The company also operates Tourism business for both regular travel 
+                groups and delegation groups.
+              </p>
+              <ul>
+                <li> develop and maintain company's online group-booking platform for hotel rooms </li>
+                <li> establish and maintain relationships with hotels, vendors, and clients, such as Ctrip and Priceline.com </li>
+                <li> handle about 20000-room bookings annually </li>
+              </ul>
+            </div>
+            
+    
           </div>
-        </div> -->
+        </div>
+    
+    
         
+    
+        <div id="english_portSection" style="display: none">
+    
+          <div id="portfolio1" style="display: flex; flex-direction: row;">
+            <img src="./imgs/vertex2image.gif" alt="Human Figure Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 20px;" />
+            <div style="padding-left: 25px; width: 70%;">
+              <h2 style="margin-bottom: 10px;" 
+                  onMouseOver="this.style.textDecoration='underline';"
+                  onMouseOut="this.style.textDecoration='none';">
+                <a href="https://github.com/Zachs-Playground/Human-Model-Construction" 
+                  target="_blank" rel="noopener noreferrer"
+                  style="text-decoration: none; color: rgb(0, 160, 250);">
+                Vertex2Image -- Construct Human Figure Based On A Monocular Video &nbsp; [ Github ]
+                </a>
+              </h2>
+              <h3><span style="color: rgb(20, 255, 40);">Status:</span> Published At ACM IUI 2023 Conference</h3>
+              <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Computer Vision, Computer Graphic, Deep Learning Network</h3>
+              
+              <p style="margin-top: 10px;"> 
+                This project is based on the SMPL and UNet++ model to construct a targeted human figure. 
+                Vertex2Image uses SMPL vertices to collect color and motion information. 
+                Vertex2Image is presenting a human figure but not constructing an actual human model.
+                With a given camera direction, we can determine which vertices are in the scene, then feed 
+                the vertices' information into the model to present what the scene should look like. The biggest 
+                advantage we have over other models is the training speed. The model only needs 2 hours of training 
+                on a single GPU to construct high-fidelity human figures, instead of spending a few hours with 
+                multiple GPUs or spending a few days with a single GPU.
+              </p>
+            </div>
+          </div>
+    
+    
+          <div id="portfolio2" style="margin-top: 30px; display: flex; flex-direction: row;">
+            <img src="./imgs/pose_estimation.gif" alt="Pose Estimation Image" style="width: 15%; height: 10%; margin-top: 20px; border-radius: 10px;" />
+            <div style="padding-left: 25px; width: 70%;">
+              <h2 style="margin-bottom: 10px;" 
+                  onMouseOver="this.style.textDecoration='underline';"
+                  onMouseOut="this.style.textDecoration='none';">
+                <a href="https://github.com/Zachs-Playground/3D-Pose-Estimation" 
+                  target="_blank" rel="noopener noreferrer"
+                  style="text-decoration: none; color: rgb(255, 240, 80);">
+                  3D Pose Estimation From Multi-View 2D Joints' Locations &nbsp; [ Github ]
+                </a>
+              </h2>
+              <h3><span style="color: rgb(20, 255, 40);">Status:</span> Completed </h3>
+              <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Computer Vision, Triangulation, Deep Learning Network</h3>
+              
+              <p style="margin-top: 10px;"> 
+                PoseAttention is an advanced deep-learning model designed to accurately estimate key human joints in a 
+                three-dimensional (3D) space using 2D joint landmarks as input. Our model is designed to work efficiently 
+                with a single-camera view source and can seamlessly integrate with various off-the-shelf 2D pose detection 
+                models. By leveraging the power of attention mechanisms, PoseAttention effectively captures spatial features 
+                and further enhances the results through a motion layer. In evaluations conducted on the Fit3D dataset[1], 
+                PoseAttention achieved an impressive Mean Per Joint Position Error (MPJPE) score of 7.3. The MPJPE metric 
+                serves as a standard benchmark in the field of pose estimation. To further validate our model's performance, 
+                we also tested PoseAttention on the CMU Panoptic dataset[2] in comparison with other models. Encouragingly, 
+                PoseAttention demonstrated equal performance to the current state-of-the-art single-view model[33], as measured 
+                by the MPJPE metric. Our contributions encompass three significant achievements: 1) attaining state-of-the-art 
+                results on two distinct datasets, 2) providing effortless integration with any off-the-shelf 2D pose detectors, 
+                and 3) offering a unique model architecture with the attention mechanism for the pose estimation task. 
+              </p>
+            </div>
+          </div>
+    
+    
+          <div id="portfolio3" style="margin-top: 30px; display: flex; flex-direction: row;">
+            <img src="./imgs/cemetery.png" alt="Annot Tool Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 10px;" />
+            <div style="padding-left: 25px; width: 70%;">
+              <h2 style="margin-bottom: 10px; color: rgb(255, 110, 110)" >
+                Online Image Annotation & Text Recognition Tool &nbsp; [ Private Code ]
+                </a>
+              </h2>
+              <h3><span style="color: rgb(20, 255, 40);">Status:</span> Completed. Worked as a software contractor </h3>
+              <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> Python, Computer Vision, Deep Learning Model, React / JS, AWS, Alibaba Cloud, HTML, CSS </h3>
+              
+              <p style="margin-top: 10px;"> 
+                This project is an internal tool for a Chinese company, which provides services to Chinese Muslim 
+                cemeteries. One part of their business is to locate where tombs are based on name searches. In China, 
+                most Muslim cemeteries are not well maintained. Therefore, there is no such database they can use 
+                directly. The employees take images of the tombs, then manually input the tomb information into their 
+                database.
+                <br>
+                <br>
+                Due to the complexity of mixed text structures and their unique ways of grouping text, no existing dataset 
+                that I could use to meet our criteria for training a new model.  Furthermore, no existing deep learning 
+                models could handle this task either. With limited labor availability, I used a self-supervised learning 
+                model to generate pseudo labels for downstream training. After obtaining the labels and performing some 
+                corrections, I could train a deep learning model to recognize text information in images. However, the 
+                work is not done. The model does not have any clue how to group the text due to the unique grouping form 
+                on the tomb.
+                <br>
+                <br>
+                Therefore, I developed a tool for employees to input the information into database by clicking the 
+                recognized text. This dramatically reduced their input time in comparison to typing the information into 
+                the database. The tool also allows them to perform corrections if the text was not recognized correctly. 
+                In the meanwhile, the tool is collecting data on how the employees group the text. This data would be 
+                used to train a new downstream model to achieve true automation.
+              </p>
+            </div>
+          </div>
+    
+          
+          <div id="portfolio4" style="margin-top: 30px; display: flex; flex-direction: row;">
+            <img src="./imgs/neural_network.webp" alt="Pose Estimation Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 10px;" />
+            <div style="padding-left: 25px; width: 70%;">
+              <h2 style="margin-bottom: 10px;" 
+                  onMouseOver="this.style.textDecoration='underline';"
+                  onMouseOut="this.style.textDecoration='none';">
+                <a href="https://github.com/Zachs-Playground/NNLib" 
+                  target="_blank" rel="noopener noreferrer"
+                  style="text-decoration: none; color: rgb(170, 50, 255);">
+                NNLib -- C++ Neural Network Assembler &nbsp; [ Github ]
+                </a>
+              </h2>
+              <h3><span style="color: rgb(20, 255, 40);">Status:</span> Under development</h3>
+              <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> C++, OpenMP, CUDA, Linear Algebra, Differentiation, C#, Unity</h3>
+              
+              <p style="margin-top: 10px;"> 
+                This project aims to build a neural network library and interface with C++, OpenMP, CUDA, and Unity, 
+                no other third-party dependencies are included. My goal is to build a C++ package like OpenMMLab (which is a 
+                Python package). Users can call pre-defined components and quickly assemble a model for training. 
+                Moreover, I plan to build an interface that users can build a model without writing a single line of 
+                code, like the Blueprint in Unreal Engine.
+                <br>
+                <br>
+                I believe that building deep learning models will become more and more user-friendly, and people with 
+                no coding background should also be able to use AI as a common tool, just like Unreal Engine opens a 
+                door to many game designers who do not program.
+              </p>
+            </div>
+          </div>
+          
+          <!-- <div id="portfolio5" style="margin-top: 30px; display: flex; flex-direction: row;">
+            <img src="./imgs/rp2040.jpg" alt="Arduino Nano Image" style="width: 15%; height: 15%; margin-top: 20px; border-radius: 10px;" />
+            <div style="padding-left: 25px; width: 70%;">
+              <h2 style="margin-bottom: 10px; color: rgb(0, 211, 200)">
+                C++ RP2040 Board Emulator
+                </a>
+              </h2>
+              <h3><span style="color: rgb(20, 255, 40);">Status:</span> In Planning</h3>
+              <h3><span style="color: rgb(250, 142, 0);">Tech Stack:</span> C++, Embedding System, RP2040 </h3>
+              
+              <p style="margin-top: 10px;"> 
+                
+              </p>
+            </div>
+          </div> -->
+          
+        </div>
       </div>
     </div>
+
   </div>
 
   <script src="index.js"></script>
